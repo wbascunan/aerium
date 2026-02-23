@@ -256,7 +256,7 @@ img {
     justify-content: center;
     text-align: center;
     padding: 130px 20px 70px;
-    background: url('imagenes/brasil/brasil.png') center center / cover no-repeat;
+    background: url('imagenes/portada.jpg') center center / cover no-repeat;
 }
 
 .hero-overlay {
