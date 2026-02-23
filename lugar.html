@@ -4,36 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destino | Aerium</title>
+    <meta name="description" content="Galería de destinos de Aerium: explora videos e imágenes aéreas profesionales por locación.">
     <link rel="icon" href="imagenes/logo/AeriumLogoPng.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
-<body style="padding-top: 80px;">
+<body class="pagina-lugar">
 
-    <nav id="navbar" class="scrolled">
-        <a href="index.html" class="logo">AER<span>IUM</span></a>
-        <ul class="nav-links">
-            <li><a href="index.html"><i class="fas fa-arrow-left"></i> Volver al Inicio</a></li>
+    <nav id="navbar" class="navbar scrolled">
+        <a href="index.html" class="logo" aria-label="Volver al inicio de Aerium">AER<span>IUM</span></a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#portafolio">Portafolio</a></li>
+            <li><a href="index.html#contacto" class="btn-contacto">Cotizar</a></li>
         </ul>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
-    <section class="seccion">
-        <div class="contenedor reveal">
-            <h1 id="titulo-lugar" class="titulo-seccion" style="font-size: 3rem;">Cargando...</h1>
-            <p id="desc-lugar" style="text-align: center; color: var(--texto-gris); margin-bottom: 50px;"></p>
-            <div style="text-align: center; margin-bottom: 50px;">
-                <a href="index.html#contacto" class="btn-primario">Cotizar Vuelo</a>
+    <main>
+    <header id="lugar-encabezado-header" class="lugar-encabezado">
+        <div class="lugar-encabezado-bg" id="lugar-encabezado-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="contenedor lugar-encabezado-contenido reveal fade-up">
+            <p class="hero-badge">Galería de destino</p>
+            <h1 id="titulo-lugar" class="lugar-titulo">Cargando...</h1>
+            <p id="desc-lugar" class="lugar-descripcion"></p>
+            <div class="lugar-acciones">
+                <a href="index.html#contacto" class="btn-primario">Cotizar vuelo en esta zona</a>
+                <a href="index.html#destinos" class="btn-secundario">Ver otros destinos</a>
             </div>
-            
-            <div class="media-layout">
-                <div class="contenedor-video" id="video-lugar"></div>
-                <div id="galeria-lateral" class="galeria-lateral"></div>
-            </div>
+        </div>
+    </header>
 
-            <div id="galeria-extra" class="galeria-grid galeria-extra"></div>
+    <section class="seccion lugar-contenido">
+        <div class="contenedor reveal">
+            <div class="lugar-bloque-media">
+                <div class="media-layout">
+                    <div class="contenedor-video" id="video-lugar"></div>
+                    <div id="galeria-lateral" class="galeria-lateral"></div>
+                </div>
+                <div id="galeria-extra" class="galeria-grid galeria-extra"></div>
+            </div>
         </div>
     </section>
+    </main>
 
     <div id="lightbox" class="lightbox">
         <span class="cerrar-lightbox"><i class="fas fa-times"></i></span>
@@ -41,8 +60,21 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Aerium. Todos los derechos reservados.</p>
-        <p>&copy; Created by <a href="https://www.instagram.com/w.bascunan20/">Williams Bascuñán</a></p>
+        <div class="footer-contenido">
+            <a href="index.html" class="logo">AER<span>IUM</span></a>
+            <div class="footer-links">
+                <a href="index.html#servicios">Servicios</a>
+                <a href="index.html#portafolio">Portafolio</a>
+                <a href="index.html#destinos">Destinos</a>
+                <a href="index.html#contacto">Contacto</a>
+            </div>
+            <div class="footer-redes">
+                <a href="https://www.instagram.com/juanahumadafilms/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@Aerium-f6n" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p id="copyright"></p>
+            <p>Created By <a href="https://www.instagram.com/w.bascunan20/" target="_blank" rel="noopener noreferrer" class="footer-creator-link">Williams Bascuñán</a></p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aerium | Registro Aéreo</title>
+    <title>Aerium | Servicios Profesionales de Drones para Empresas</title>
+    <meta name="description" content="Aerium ofrece servicios profesionales de drones para bienes raíces, producción audiovisual e inspección industrial. Cotiza tu proyecto y eleva tu marca con contenido aéreo de alto impacto.">
+    <meta property="og:title" content="Aerium | Servicios Profesionales de Drones">
+    <meta property="og:description" content="Captura aérea profesional para empresas: portafolio premium, inspección y producción audiovisual.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="imagenes/logo/AeriumLogoPng.png">
+    <meta property="og:locale" content="es_CL">
     <link rel="icon" href="imagenes/logo/AeriumLogoPng.png" type="image/png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,44 +17,56 @@
 </head>
 <body>
 
-    <nav id="navbar">
-        <a href="#inicio" class="logo">AER<span>IUM</span></a>
-        <ul class="nav-links">
+    <nav id="navbar" class="navbar">
+        <a href="#inicio" class="logo" aria-label="Ir al inicio de Aerium">AER<span>IUM</span></a>
+        <ul class="nav-links" id="nav-links">
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#servicios">Servicios</a></li>
             <li><a href="#portafolio">Portafolio</a></li>
-            <li><a href="#contacto" class="btn-contacto">Cotizar</a></li>
+            <li><a href="#nosotros">Sobre Nosotros</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#faq">Preguntas Frecuentes</a></li>
+            <li><a href="#contacto" class="btn-contacto">Contacto</a></li>
         </ul>
-        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 
     <header id="inicio" class="hero">
         <div class="hero-overlay"></div>
-        <div class="hero-content reveal">
-            <h1>Registro <span>Aéreo</span></h1>
-            <p>Capturamos la grandeza de tus proyectos con cinematografía aérea de alta gama.</p>
-            <a href="#portafolio" class="btn-primario">Ver mi trabajo</a>
+        <div class="hero-content reveal fade-up">
+            <p class="hero-badge">Servicios premium de drones</p>
+            <h1>Impulsa tus ventas con <span>contenido aéreo</span></h1>
+            <p>Drones que transforman tu marca en imágenes de impacto.</p>
+            <div class="hero-cta">
+                <a href="#contacto" class="btn-primario">Cotiza tu proyecto</a>
+                <a href="#portafolio" class="btn-secundario">Ver portafolio</a>
+            </div>
         </div>
     </header>
 
+    <main>
     <section id="servicios" class="seccion oscura">
         <div class="contenedor reveal">
-            <h2 class="titulo-seccion">Especialidades</h2>
+            <h2 class="titulo-seccion">Servicios estratégicos para resultados reales</h2>
             <div class="grid-servicios">
                 <div class="tarjeta-servicio">
-                    <i class="fas fa-home"></i>
-                    <h3>Bienes Raíces</h3>
-                    <p>Tomas espectaculares para destacar la magnitud y el entorno de propiedades exclusivas.</p>
+                    <i class="fas fa-building" aria-hidden="true"></i>
+                    <h3>Bienes raíces</h3>
+                    <p>Destaca propiedades con tomas aéreas de alto impacto que aceleran visitas, mejoran percepción de valor y cierran ventas más rápido.</p>
                 </div>
                 <div class="tarjeta-servicio">
-                    <i class="fas fa-video"></i>
+                    <i class="fas fa-clapperboard" aria-hidden="true"></i>
                     <h3>Producción Audiovisual</h3>
-                    <p>Cine, comerciales y videoclips musicales con tomas aéreas dinámicas en 4K.</p>
+                    <p>Producción cinematográfica en 4K para marcas, eventos y campañas con narrativa visual profesional que conecta y convierte.</p>
                 </div>
                 <div class="tarjeta-servicio">
-                    <i class="fas fa-hard-hat"></i>
-                    <h3>Inspección e Industria</h3>
-                    <p>Monitoreo de obras, avances de construcción y topografía de precisión.</p>
+                    <i class="fas fa-industry" aria-hidden="true"></i>
+                    <h3>Inspección industrial</h3>
+                    <p>Reduce riesgos y costos con monitoreo aéreo seguro para obras, plantas e infraestructura, con reportes visuales claros y accionables.</p>
                 </div>
             </div>
         </div>
@@ -56,87 +74,264 @@
 
     <section id="portafolio" class="seccion">
         <div class="contenedor reveal">
-            <h2 class="titulo-seccion">Últimos Vuelos</h2>
-            
-            <div class="media-layout">
-                <div class="contenedor-video">
-                    <iframe src="https://www.youtube.com/embed/Bd1VkmQtAyc" title="Showreel Drone" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <div class="galeria-lateral">
-                    <div class="item-galeria">
-                        <img src="imagenes/brasil/brasil.png" alt="Drone Foto 1">
-                        <button class="btn-expandir" aria-label="Ver en pantalla completa"><i class="fas fa-expand"></i></button>
-                    </div>
-                    <div class="item-galeria">
-                        <img src="imagenes/loncura/loncura.jpg" alt="Drone Foto 1">
-                        <button class="btn-expandir" aria-label="Ver en pantalla completa"><i class="fas fa-expand"></i></button>
-                    </div>
-                </div>
+            <h2 class="titulo-seccion">Portafolio</h2>
+            <p class="subtitulo-seccion">Filtra por categoría y abre cada proyecto en pantalla completa para revisar el nivel de detalle.</p>
+            <div class="filtros-portafolio" role="tablist" aria-label="Filtrar portafolio">
+                <button class="filtro-btn active" data-filter="all">Todo</button>
+                <button class="filtro-btn" data-filter="paisajes">Paisajes</button>
+                <button class="filtro-btn" data-filter="audiovisual">Producción audiovisual</button>
+                <button class="filtro-btn" data-filter="industrial">Inspección industrial</button>
             </div>
 
-            <div id="lightbox" class="lightbox">
-                <span class="cerrar-lightbox"><i class="fas fa-times"></i></span>
-                <img id="lightbox-img" src="" alt="Pantalla completa">
-            </div>
-        </div>
-    </section>
+            <div class="grid-portafolio">
+                <article class="item-portafolio reveal" data-category="paisajes" data-type="image" data-src="imagenes/brasil/brasil.png">
+                    <img src="imagenes/brasil/brasil.png" alt="Vista aérea de propiedad frente al mar" loading="lazy">
+                    <div class="overlay-item">
+                        <h3>Praia Tartaruga, Buzios</h3>
+                        <p>Paisajes</p>
+                    </div>
+                </article>
 
-    <section id="lugares" class="seccion oscura">
-        <div class="contenedor reveal">
-            <h2 class="titulo-seccion">Destinos Explorados</h2>
-            <p style="text-align: center; color: var(--texto-gris); margin-bottom: 40px;">Selecciona una ubicación para ver el material aéreo exclusivo.</p>
-            
-            <div class="grid-lugares">
-                <a href="lugar.html?id=llay-llay" class="tarjeta-lugar" style="background-image: url('imagenes/llay-llay/llay-llay.jpg');">
-                    <div class="capa-oscura">
+                <article class="item-portafolio reveal" data-category="audiovisual" data-type="video" data-src="https://www.youtube.com/embed/Bd1VkmQtAyc">
+                    <img src="https://img.youtube.com/vi/Bd1VkmQtAyc/hqdefault.jpg" alt="Producción audiovisual aérea para marca" loading="lazy">
+                    <div class="overlay-item">
+                        <h3>Praia Tartaruga, Buzios</h3>
+                        <p>Producción audiovisual</p>
+                    </div>
+                </article>
+
+                <article class="item-portafolio reveal" data-category="paisajes" data-type="image" data-src="imagenes/loncura/loncura.jpg">
+                    <img src="imagenes/loncura/loncura.jpg" alt="Inspección aérea de zona costera e infraestructura" loading="lazy">
+                    <div class="overlay-item">
+                        <h3>Loncura</h3>
+                        <p>Paisajes</p>
+                    </div>
+                </article>
+
+                <article class="item-portafolio reveal" data-category="paisajes" data-type="image" data-src="imagenes/llay-llay/llay-llay.jpg">
+                    <img src="imagenes/llay-llay/llay-llay.jpg" alt="Toma aérea de entorno residencial" loading="lazy">
+                    <div class="overlay-item">
                         <h3>Llay-Llay</h3>
-                        <span class="btn-ver-mas">Ver Galería <i class="fas fa-arrow-right"></i></span>
+                        <p>Paisajes</p>
                     </div>
-                </a>
+                </article>
 
-                <a href="lugar.html?id=brasil" class="tarjeta-lugar" style="background-image: url('imagenes/brasil/brasil.png');">
-                    <div class="capa-oscura">
-                        <h3>Brasil</h3>
-                        <span class="btn-ver-mas">Ver Galería <i class="fas fa-arrow-right"></i></span>
+                <article class="item-portafolio reveal" data-category="audiovisual" data-type="video" data-src="https://www.youtube.com/embed/EZ-rUzmQRA0">
+                    <img src="https://img.youtube.com/vi/EZ-rUzmQRA0/hqdefault.jpg" alt="Cobertura aérea para campaña audiovisual" loading="lazy">
+                    <div class="overlay-item">
+                        <h3>Caleta Loncura, V región</h3>
+                        <p>Producción audiovisual</p>
                     </div>
-                </a>
+                </article>
 
-                <a href="lugar.html?id=vregion" class="tarjeta-lugar" style="background-image: url('imagenes/loncura/loncura.jpg');">
-                    <div class="capa-oscura">
-                        <h3>V Región</h3>
-                        <span class="btn-ver-mas">Ver Galería <i class="fas fa-arrow-right"></i></span>
+                <article class="item-portafolio reveal" data-category="audiovisual" data-type="video" data-src="https://www.youtube.com/embed/toYy-val0vI">
+                    <img src="https://img.youtube.com/vi/toYy-val0vI/hqdefault.jpg" alt="Inspección técnica aérea de terreno" loading="lazy">
+                    <div class="overlay-item">
+                        <h3>Llay-Llay</h3>
+                        <p>Producción audiovisual</p>
                     </div>
+                </article>
+
+                <article class="item-portafolio reveal" data-category="industrial" data-type="video" data-src="https://www.youtube.com/embed/DDFflmyPwBg">
+                    <img src="https://img.youtube.com/vi/DDFflmyPwBg/hqdefault.jpg" alt="Inspección técnica aérea de terreno" loading="lazy">
+                    <div class="overlay-item">
+                        <h3>Obra San Agustín 1</h3>
+                        <p>Inspección industrial</p>
+                    </div>
+                </article>
+
+                <article class="item-portafolio reveal" data-category="industrial" data-type="video" data-src="https://www.youtube.com/embed/52QTLVIUjqw">
+                    <img src="https://img.youtube.com/vi/52QTLVIUjqw/hqdefault.jpg" alt="Inspección técnica aérea de terreno" loading="lazy">
+                    <div class="overlay-item">
+                        <h3>Obra San Agustín 2</h3>
+                        <p>Inspección industrial</p>
+                    </div>
+                </article>
+
+                <article class="item-portafolio reveal" data-category="industrial" data-type="video" data-src="https://www.youtube.com/embed/ibQ0ZDcm1kQ">
+                    <img src="https://img.youtube.com/vi/ibQ0ZDcm1kQ/hqdefault.jpg" alt="Inspección técnica aérea de terreno" loading="lazy">
+                    <div class="overlay-item">
+                        <h3>Obra San Agustín 3</h3>
+                        <p>Inspección industrial</p>
+                    </div>
+                </article>
+
+                <article class="item-portafolio reveal" data-category="industrial" data-type="video" data-src="https://www.youtube.com/embed/1kQ9eg4gYWA">
+                    <img src="https://img.youtube.com/vi/1kQ9eg4gYWA/hqdefault.jpg" alt="Inspección técnica aérea de terreno" loading="lazy">
+                    <div class="overlay-item">
+                        <h3>Obra San Agustín 4</h3>
+                        <p>Inspección industrial</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="portafolio-mas-wrap">
+                <a href="portafolio.html" class="btn-secundario">Ver más</a>
+            </div>
+
+            <div id="portfolio-modal" class="modal" aria-hidden="true">
+                <button class="cerrar-modal" id="cerrar-modal" aria-label="Cerrar modal"><i class="fas fa-times"></i></button>
+                <div class="modal-contenido" id="modal-contenido"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="destinos" class="seccion oscura">
+        <div class="contenedor reveal">
+            <h2 class="titulo-seccion">Galerías por destino</h2>
+            <p class="subtitulo-seccion">Accede directamente a cada locación para ver videos e imágenes en detalle.</p>
+            <div class="grid-destinos">
+                <a href="lugar.html?id=llay-llay" class="tarjeta-destino" style="background-image: url('imagenes/llay-llay/llay-llay.jpg');">
+                    <span class="tag-destino">Llay-Llay</span>
+                    <h3>Ver galería completa</h3>
+                </a>
+                <a href="lugar.html?id=brasil" class="tarjeta-destino" style="background-image: url('imagenes/brasil/brasil.png');">
+                    <span class="tag-destino">Brasil</span>
+                    <h3>Ver galería completa</h3>
+                </a>
+                <a href="lugar.html?id=vregion" class="tarjeta-destino" style="background-image: url('imagenes/loncura/loncura.jpg');">
+                    <span class="tag-destino">V Región</span>
+                    <h3>Ver galería completa</h3>
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="contacto" class="seccion oscura">
+    <section id="nosotros" class="seccion oscura">
         <div class="contenedor reveal">
-            <h2 class="titulo-seccion">Planifiquemos tu Vuelo</h2>
-            <div class="contacto-flex">
-                <form class="formulario" action="https://formspree.io/f/xbdaplvj" method="POST">
-                    <input type="text" name="nombre" placeholder="Tu Nombre" required>
-                    <input type="email" name="email" placeholder="Tu Correo" required>
-                    <textarea name="mensaje" placeholder="Cuéntame sobre el vuelo que necesitas..." rows="5" required></textarea>
-                    <button type="submit" class="btn-primario">Enviar Mensaje</button>
+            <h2 class="titulo-seccion">Sobre Nosotros</h2>
+            <div class="nosotros-grid">
+                <div class="nosotros-texto">
+                    <h3>Historia de Aerium</h3>
+                    <p>Aerium nace para unir creatividad y estrategia comercial en cada vuelo. Comenzamos apoyando pequeños proyectos locales y hoy acompañamos a empresas que necesitan contenido visual confiable para vender más y comunicar mejor.</p>
+                    <h3>Misión</h3>
+                    <p>Potenciar marcas y proyectos con soluciones aéreas seguras, precisas y visualmente impactantes que generen resultados medibles.</p>
+                    <h3>Visión</h3>
+                    <p>Ser la referencia regional en servicios de drones para empresas que buscan innovación, profesionalismo y alto estándar de ejecución.</p>
+                </div>
+                <div class="nosotros-imagen">
+                    <img src="imagenes/logo/logo white.png" alt="Fundador y equipo de Aerium" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonios" class="seccion">
+        <div class="contenedor reveal">
+            <h2 class="titulo-seccion">Testimonios</h2>
+            <div class="carrusel-testimonios" id="carrusel-testimonios">
+                <article class="testimonio active">
+                    <p>"Aerium nos ayudó a mostrar nuestros proyectos inmobiliarios con una calidad impecable. Subimos las consultas en menos de un mes."</p>
+                    <h3>Camila Rojas</h3>
+                    <span>Proyecto: Condominio Vista Norte</span>
+                </article>
+                <article class="testimonio">
+                    <p>"La cobertura aérea elevó nuestra campaña audiovisual. El material llegó a tiempo y superó expectativas del cliente final."</p>
+                    <h3>Matías Contreras</h3>
+                    <span>Proyecto: Lanzamiento de marca deportiva</span>
+                </article>
+                <article class="testimonio">
+                    <p>"Necesitábamos inspección en zonas complejas y el equipo trabajó con protocolos claros, entregando información precisa para decisiones técnicas."</p>
+                    <h3>Valentina Pérez</h3>
+                    <span>Proyecto: Inspección de obra industrial</span>
+                </article>
+                <div class="indicadores" id="indicadores-testimonios" aria-label="Indicadores de testimonios"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="seccion oscura">
+        <div class="contenedor reveal">
+            <h2 class="titulo-seccion">Preguntas Frecuentes</h2>
+            <div class="faq-lista" id="faq-lista">
+                <article class="faq-item">
+                    <button class="faq-pregunta">¿Cómo se calculan los precios?<i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-respuesta"><p>El valor depende de tipo de servicio, tiempo de vuelo, locación y nivel de postproducción. Te enviamos una cotización clara y personalizada.</p></div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-pregunta">¿Cuál es el tiempo de entrega?<i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-respuesta"><p>Normalmente entregamos entre 48 y 120 horas según complejidad. También contamos con opciones urgentes para proyectos prioritarios.</p></div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-pregunta">¿Gestionan permisos de vuelo?<i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-respuesta"><p>Sí. Evaluamos cada operación, revisamos restricciones y coordinamos los permisos necesarios para trabajar de forma legal y segura.</p></div>
+                </article>
+                <article class="faq-item">
+                    <button class="faq-pregunta">¿Qué medidas de seguridad aplican?<i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-respuesta"><p>Operamos con protocolos de seguridad, planificación previa, evaluación meteorológica y pilotos capacitados para minimizar cualquier riesgo.</p></div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="seccion">
+        <div class="contenedor reveal">
+            <h2 class="titulo-seccion">Conversemos tu próximo proyecto</h2>
+            <div class="contacto-wrap">
+                <form class="formulario" id="formulario-contacto" action="https://formspree.io/f/xbdaplvj" method="POST" novalidate>
+                    <div class="campo-formulario">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="campo-formulario">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="tu@empresa.com" required>
+                    </div>
+                    <div class="campo-formulario">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="+56 9 1234 5678" required>
+                    </div>
+                    <div class="campo-formulario">
+                        <label for="servicio">Tipo de servicio</label>
+                        <select id="servicio" name="servicio" required>
+                            <option value="">Selecciona un servicio</option>
+                            <option value="bienes-raices">Bienes raíces</option>
+                            <option value="audiovisual">Producción audiovisual</option>
+                            <option value="industrial">Inspección industrial</option>
+                            <option value="otros">Otros servicios</option>
+                        </select>
+                    </div>
+                    <div class="campo-formulario">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu proyecto" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primario" id="btn-submit">
+                        <span class="btn-text">Enviar solicitud</span>
+                        <span class="btn-loader" aria-hidden="true"></span>
+                    </button>
+                    <p class="estado-formulario" id="estado-formulario" aria-live="polite"></p>
                 </form>
-                <div class="info-contacto">
-                    <img class="logo-contacto" src="imagenes/logo/AeriumLogoPng.png" alt="Aerium Registro Aéreo">
-                    <p><i class="fas fa-envelope"></i> aerium667@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +56 9 4288 4382</p>
-                    <div class="redes">
-                        <a href="https://www.instagram.com/juanahumadafilms/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@Aerium-f6n"><i class="fab fa-youtube"></i></a>
+
+                <div class="contacto-social">
+                    <img class="logo-contacto" src="imagenes/logo/AeriumLogoPng.png" alt="Logo Aerium" loading="lazy">
+                    <p>Te respondemos en menos de 24 horas hábiles.</p>
+                    <div class="social-botones">
+                        <a href="https://wa.me/56942884382" target="_blank" rel="noopener noreferrer" class="btn-social whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://www.instagram.com/juanahumadafilms/" target="_blank" rel="noopener noreferrer" class="btn-social instagram"><i class="fab fa-instagram"></i> Instagram</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 Aerium. Todos los derechos reservados.</p>
-        <p>&copy; Created by <a href="https://www.instagram.com/w.bascunan20/">Williams Bascuñán</a></p>
+        <div class="footer-contenido">
+            <a href="#inicio" class="logo">AER<span>IUM</span></a>
+            <div class="footer-links">
+                <a href="#servicios">Servicios</a>
+                <a href="#portafolio">Portafolio</a>
+                <a href="#destinos">Destinos</a>
+                <a href="#nosotros">Sobre Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="footer-redes">
+                <a href="https://www.instagram.com/juanahumadafilms/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@Aerium-f6n" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p id="copyright"></p>
+            <p>Created By <a href="https://www.instagram.com/w.bascunan20/" target="_blank" rel="noopener noreferrer" class="footer-creator-link">Williams Bascuñán</a></p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
