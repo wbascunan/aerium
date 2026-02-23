@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destino | Aerium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body style="padding-top: 80px;">
+
+    <nav id="navbar" class="scrolled">
+        <a href="index.html" class="logo">AER<span>IUM</span></a>
+        <ul class="nav-links">
+            <li><a href="index.html"><i class="fas fa-arrow-left"></i> Volver al Inicio</a></li>
+        </ul>
+    </nav>
+
+    <section class="seccion">
+        <div class="contenedor reveal">
+            <h1 id="titulo-lugar" class="titulo-seccion" style="font-size: 3rem;">Cargando...</h1>
+            <p id="desc-lugar" style="text-align: center; color: var(--texto-gris); margin-bottom: 50px;"></p>
+            <div style="text-align: center; margin-bottom: 50px;">
+                <a href="index.html#contacto" class="btn-primario">Cotizar Vuelo</a>
+            </div>
+            
+            <div class="media-layout">
+                <div class="contenedor-video" id="video-lugar"></div>
+                <div id="galeria-lateral" class="galeria-lateral"></div>
+            </div>
+
+            <div id="galeria-extra" class="galeria-grid galeria-extra"></div>
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox">
+        <span class="cerrar-lightbox"><i class="fas fa-times"></i></span>
+        <img id="lightbox-img" src="" alt="Pantalla completa">
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Aerium. Todos los derechos reservados.</p>
+        <p>&copy; Created by <a href="https://www.instagram.com/w.bascunan20/">Williams Bascuñán</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
