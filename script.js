@@ -97,6 +97,10 @@
 
         if (!portfolioItems.length) return;
 
+        if (modal && modal.parentElement !== document.body) {
+            document.body.appendChild(modal);
+        }
+
         const applyFilter = (category) => {
             portfolioItems.forEach((item) => {
                 const itemCategory = item.dataset.category;
