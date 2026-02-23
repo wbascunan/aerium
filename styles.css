@@ -434,7 +434,8 @@ img {
     display: none;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
+    overflow-y: auto;
     backdrop-filter: blur(4px);
 }
 
@@ -443,8 +444,8 @@ img {
 }
 
 .modal-contenido {
-    width: min(1000px, 96vw);
-    max-height: 88vh;
+    width: min(1000px, 100%);
+    max-height: calc(100dvh - 120px);
     border-radius: 14px;
     overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -455,10 +456,20 @@ img {
 .modal-contenido iframe,
 .modal-contenido video {
     width: 100%;
-    height: min(78vh, 560px);
     border: none;
     display: block;
     background: #000;
+}
+
+.modal-contenido img,
+.modal-contenido video {
+    height: auto;
+    max-height: min(78vh, 560px);
+    object-fit: contain;
+}
+
+.modal-contenido iframe {
+    height: min(78vh, 560px);
 }
 
 /* =========================
@@ -521,8 +532,11 @@ img {
 
 .cerrar-modal {
     position: absolute;
-    right: 24px;
-    top: 16px;
+    right: max(12px, env(safe-area-inset-right));
+    top: max(12px, env(safe-area-inset-top));
+    z-index: 2;
+    display: grid;
+    place-items: center;
     width: 42px;
     height: 42px;
     border-radius: 999px;
@@ -1038,6 +1052,7 @@ footer {
     display: none;
     align-items: center;
     justify-content: center;
+    padding: max(20px, env(safe-area-inset-top)) 14px max(20px, env(safe-area-inset-bottom));
 }
 
 .lightbox.activo {
@@ -1045,16 +1060,26 @@ footer {
 }
 
 .lightbox img {
-    max-width: 92vw;
-    max-height: 90vh;
+    max-width: min(1200px, 96vw);
+    max-height: calc(100dvh - 110px);
+    object-fit: contain;
     border-radius: 8px;
 }
 
 .cerrar-lightbox {
     position: absolute;
-    top: 16px;
-    right: 24px;
-    font-size: 2rem;
+    top: max(12px, env(safe-area-inset-top));
+    right: max(12px, env(safe-area-inset-right));
+    z-index: 2;
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: none;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 1.1rem;
     cursor: pointer;
 }
 
@@ -1123,10 +1148,20 @@ footer {
         padding: 24px;
     }
 
+    .modal {
+        align-items: flex-start;
+    }
+
+    .modal-contenido {
+        margin-top: 52px;
+        max-height: calc(100dvh - 130px);
+    }
+
     .modal-contenido iframe,
     .modal-contenido img,
     .modal-contenido video {
-        height: min(66vh, 420px);
+        height: auto;
+        max-height: min(66dvh, 420px);
     }
 
     .media-layout {
