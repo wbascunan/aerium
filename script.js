@@ -19,6 +19,14 @@ if (menuToggle) {
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
+    
+    // Cerrar menú cuando se presiona cualquier link
+    const navItems = navLinks.querySelectorAll('a');
+    navItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
 }
 
 // 3. Animaciones al hacer scroll (Intersection Observer)
@@ -98,7 +106,7 @@ const baseDeDatosLugares = {
         descripcion: 'La inmensidad del océano capturada desde el cielo.',
         videos: ['https://www.youtube.com/embed/Bd1VkmQtAyc'],
         imagenes: [
-            'imagenes/brasil/brasil.jpg'
+            'imagenes/brasil/brasil.png'
         ]
     },
     'vregion': {
