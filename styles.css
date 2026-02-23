@@ -432,15 +432,14 @@ img {
     z-index: 1800;
     background: rgba(2, 6, 12, 0.88);
     display: none;
-    align-items: center;
-    justify-content: center;
+    place-items: center;
     padding: max(20px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
     overflow: hidden;
     backdrop-filter: blur(4px);
 }
 
 .modal.activo {
-    display: flex;
+    display: grid;
 }
 
 .modal-contenido {
@@ -454,6 +453,37 @@ img {
     background: #000;
     border: 1px solid rgba(255, 255, 255, 0.12);
     box-shadow: var(--sombra-suave);
+}
+
+.modal-media {
+    width: 100%;
+}
+
+.modal-media-video {
+    aspect-ratio: 16 / 9;
+    max-height: min(78vh, 560px);
+}
+
+.modal-media-video iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    background: #000;
+}
+
+.modal-media-image {
+    display: flex;
+    justify-content: center;
+}
+
+.modal-media-image img {
+    width: 100%;
+    height: auto;
+    max-height: min(78vh, 560px);
+    object-fit: contain;
+    display: block;
+    background: #000;
 }
 
 .modal-contenido img,
@@ -1156,6 +1186,15 @@ footer {
 
     .modal-contenido {
         max-height: calc(100dvh - 130px);
+    }
+
+    .modal-media-video {
+        max-height: min(62dvh, 420px);
+    }
+
+    .modal-media-image img,
+    .modal-media-video iframe {
+        max-height: min(62dvh, 420px);
     }
 
     .modal-contenido iframe,

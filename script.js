@@ -134,16 +134,24 @@
             if (!modal || !modalContent || !src) return;
             if (isPortfolioModalOpen) return;
 
-            if (type === 'video') {
-                modalContent.innerHTML = `<iframe src="${src}" title="Video de portafolio Aerium" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            const contentType = type === 'video' ? 'video' : 'image';
+
+            if (contentType === 'video') {
+                modalContent.innerHTML = `<div class="modal-media modal-media-video"><iframe src="${src}" title="Video de portafolio Aerium" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`;
             } else {
-                modalContent.innerHTML = `<img src="${src}" alt="${altText || 'Contenido de portafolio'}" loading="lazy">`;
+                modalContent.innerHTML = `<div class="modal-media modal-media-image"><img src="${src}" alt="${altText || 'Contenido de portafolio'}" loading="lazy"></div>`;
             }
 
             isPortfolioModalOpen = true;
+            modal.classList.toggle('modal-video', contentType === 'video');
+            modal.classList.toggle('modal-image', contentType === 'image');
             modal.classList.add('activo');
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
+
+            requestAnimationFrame(() => {
+                modal.scrollTop = 0;
+            });
         };
 
         const closeModal = () => {
@@ -152,6 +160,7 @@
 
             isPortfolioModalOpen = false;
             modal.classList.remove('activo');
+            modal.classList.remove('modal-video', 'modal-image');
             modal.setAttribute('aria-hidden', 'true');
             modalContent.innerHTML = '';
             document.body.style.overflow = '';
