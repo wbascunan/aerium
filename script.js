@@ -124,8 +124,11 @@
             });
         });
 
+        let isPortfolioModalOpen = false;
+
         const openModal = (type, src, altText) => {
             if (!modal || !modalContent || !src) return;
+            if (isPortfolioModalOpen) return;
 
             if (type === 'video') {
                 modalContent.innerHTML = `<iframe src="${src}" title="Video de portafolio Aerium" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
@@ -133,6 +136,7 @@
                 modalContent.innerHTML = `<img src="${src}" alt="${altText || 'Contenido de portafolio'}" loading="lazy">`;
             }
 
+            isPortfolioModalOpen = true;
             modal.classList.add('activo');
             modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden';
@@ -140,6 +144,9 @@
 
         const closeModal = () => {
             if (!modal || !modalContent) return;
+            if (!isPortfolioModalOpen) return;
+
+            isPortfolioModalOpen = false;
             modal.classList.remove('activo');
             modal.setAttribute('aria-hidden', 'true');
             modalContent.innerHTML = '';
@@ -148,6 +155,7 @@
 
         portfolioItems.forEach((item) => {
             on(item, 'click', () => {
+                if (isPortfolioModalOpen) return;
                 const type = item.dataset.type || 'image';
                 const src = item.dataset.src;
                 const altText = qs('img', item)?.alt || 'Contenido de portafolio';
@@ -155,7 +163,14 @@
             });
         });
 
-        on(closeModalButton, 'click', closeModal);
+        on(closeModalButton, 'click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            closeModal();
+        });
+        on(modalContent, 'click', (event) => {
+            event.stopPropagation();
+        });
         on(modal, 'click', (event) => {
             if (event.target === modal) closeModal();
         });
@@ -438,8 +453,13 @@
 
         if (!lightbox || !lightboxImg || !expandButtons.length) return;
 
+        let isLightboxOpen = false;
+
         const openLightbox = (source) => {
             if (!source) return;
+            if (isLightboxOpen) return;
+
+            isLightboxOpen = true;
             lightboxImg.src = source;
             lightbox.classList.add('activo');
             lightbox.setAttribute('aria-hidden', 'false');
@@ -447,6 +467,9 @@
         };
 
         const closeLightbox = () => {
+            if (!isLightboxOpen) return;
+
+            isLightboxOpen = false;
             lightbox.classList.remove('activo');
             lightbox.setAttribute('aria-hidden', 'true');
             lightboxImg.src = '';
@@ -461,7 +484,14 @@
             });
         });
 
-        on(closeButton, 'click', closeLightbox);
+        on(closeButton, 'click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            closeLightbox();
+        });
+        on(lightboxImg, 'click', (event) => {
+            event.stopPropagation();
+        });
         on(lightbox, 'click', (event) => {
             if (event.target === lightbox) closeLightbox();
         });
