@@ -98,7 +98,7 @@ const baseDeDatosLugares = {
         descripcion: 'La inmensidad del océano capturada desde el cielo.',
         videos: ['https://www.youtube.com/embed/Bd1VkmQtAyc'],
         imagenes: [
-            'imagenes/brasil/brasil1.jpg'
+            'imagenes/brasil/brasil1.JPG'
         ]
     },
     'vregion': {
